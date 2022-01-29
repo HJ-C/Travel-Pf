@@ -94,6 +94,18 @@ section.imgs div.img-contents div.col img{
   margin-top: 15px;
 } 
 
-
-
-
+.text{
+  width: 50%;
+  float: left;
+  margin: 90px 30px 20px 40px;
+}
+.text p {
+  font-size: 23px;
+  font-weight: 800;
+  margin-left: 1.66%;
+  text-transform: uppercase;
+  border-bottom: solid 2px gray;
+  padding-bottom: 10px;
+  border-width: 30%;
+  width: 30%;
+}

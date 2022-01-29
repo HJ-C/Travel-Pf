@@ -29,16 +29,18 @@ a {
 	color: #303133;
 	transition: all 0.3s ease;
 }
-.bg{
+
+.bg {
 	position: relative;
 }
-.bg:after{
+
+.bg:after {
 	content: '';
 	display: block;
 	position: absolute;
 	top: 0;
 	left: 0;
-	background-image: url(../images/배경2.jpg);
+	background-image: url(../images/item-bg.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
@@ -48,185 +50,260 @@ a {
 	opacity: 0.7;
 	z-index: -1;
 }
- /*INNER*/
- .inner {
-	width: 1100px; 
-	margin: 0 auto; /*모든 inner는 가운데 정렬*/
-	position: relative;
-  }
 
-  
- /*HEADER*/
- header {
-	width: 100%; /*fixed를 하면 오토값이 최소넓이를 이용해서 빈공백이 나옴*/
-	background-color: rgba(59, 59, 59, 0.2);
-	border-bottom: 1px solid #c8c8c8; /*바텀 실선 이라 생각*/
-	position: fixed; /*fixed나 absoulte는 너비가 최소한으로 시도함, 해결방법 : wdith를 %로 해라*/
-	top:0;
+/*INNER*/
+.inner {
+	width: 1100px;
+	margin: 0 auto;
+	position: relative;
+}
+
+/*Logo & Menu*/
+header {
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.164);
+	position: fixed;
+	top: 0;
 	z-index: 9;
-  }
-  header > .inner {  /*딱 헤더 부분의 크기, 자식선택자를 이용해서 정확히 범위표현*/
+}
+
+header>.inner {
 	height: 120px;
-  }
-  header .logo {
-	height: 75px;
+}
+
+header .logo {
+	height: 100px;
 	position: absolute;
-	top: 0; /* 컨테이너에서 0지점 */
-	bottom: 0; /* 컨테이너에서 0지점*/
-	left: 0;
-	margin: auto; /* top과 bottom이 0이므로 위아래 높이를 알아서 배치함, 그리고 높이값을 선언해줘야함*/
+	top: 0;
+	bottom: 0;
+	left: 50px;
+	margin: auto;
 	text-decoration-line: none;
-  }
-  /* 서브메뉴*/
-  header .sub-menu {
+}
+
+header .logo img {
+	height: 110px;
+}
+
+header .sub-menu {
 	position: absolute;
 	top: 0px;
 	right: 0;
 	display: flex;
-  }
-  header .sub-menu ul.menu {
+}
+
+header .sub-menu ul.menu {
 	display: flex;
-  }
-  header .sub-menu ul.menu li {
+}
+
+header .sub-menu ul.menu li {
 	position: relative;
-  }
-  header .sub-menu ul.menu li::before {
-	content: ""; /*before라는 가상요소 선택자를 이용하려면 content는 반드시 있어야함 비워두기라도 해야함*/
-	/*display: block; 가상요소 before는 인라인*/
+}
+
+header .sub-menu ul.menu li::before {
+	content: "";
 	width: 1px;
 	height: 12px;
-	background-color: #e5e5e5;
-	position: absolute; /*absolute나 fixed는 알아서 블록요소로 바뀜*/
+	background-color: #000;
+	position: absolute;
 	top: 0;
 	bottom: 0;
 	margin: auto;
-  }
-  header .sub-menu ul.menu li:first-child::before {
+}
+
+header .sub-menu ul.menu li:first-child::before {
 	display: none;
-  }
-  header .sub-menu ul.menu li a {
+}
+
+header .sub-menu ul.menu li a {
 	padding: 11px 16px;
-	display: block;  /*a링크는 인라인 요소기때문에 블럭요소로 변경*/
+	display: block;
 	font-size: 13px;
-	color: #656565;
-  }
-  header .sub-menu ul.menu li a:hover {
 	color: #000;
-  }
-  
-  /* 검색창*/
-  header .sub-menu .search {
+}
+
+header .sub-menu ul.menu li a:hover {
+	color: #fff;
+}
+
+/* Search-icon*/
+header .sub-menu .search {
 	position: relative;
-	height: 34px;
-  }
-  header .sub-menu .search input {
+	height: 42px;
+	padding-top: 5px;
+}
+
+header .sub-menu .search input {
 	width: 36px;
 	height: 34px;
 	padding: 4px 10px;
-	border:1px solid #ccc;
-	box-sizing: border-box; /*가로 36 높이 34유지*/
+	border: 1px solid #ccc;
+	box-sizing: border-box;
 	border-radius: 5px;
-	outline:none; /*주변의 파란색선 제거 */
+	outline: none;
 	background-color: #fff;
-	color : #777;
+	color: #777;
 	font-size: 12px;
-	transition: width .6s; /*전환효과, 가로만 적용, 0.4초*/
-  }
-  header .sub-menu .search input:focus {  /*인풋박스를 눌렀을때 동적인 명령어(focus)*/
+	transition: width .6s;
+}
+
+header .sub-menu .search input:focus {
 	width: 190px;
 	border-color: #669900;
-  }
-  header .sub-menu .search .material-icons {
-	height: 24px; /*아래 top,bottom,margin을 통해 수직 정렬하려면 조건 : height값이 있어야함*/
+}
+
+header .sub-menu .search .material-icons {
+	height: 24px;
 	position: absolute;
 	top: 0;
 	bottom: 0;
 	right: 5px;
 	margin: auto;
-	transition: .4s; /*돋보기 아이콘이 천천히 사라짐*/
-  }
-  header .sub-menu .search.focused .material-icons { /*여기서 focuesd는 일치 선택자임*/
-	opacity: 0; /*focused 될때 돋보기가 사라짐*/
-  }
-  
-  
-  
-  /* 드롭다운 메인메뉴*/
-  header .main-menu {
-	position: absolute;
-	bottom: -10px;
-	right: 0;
-	display: flex;
-  }
-  header .main-menu .item .item__name {
-	padding: 20px 10px 34px 20px; /*드롭다운 메뉴 이름 패딩*/
-	font-family: Arial, sans-serif;
-	font-size: 13px;
-  }
-  header .main-menu .item:hover .item__name {  /*맨뒤에 hover를 해버리면 contents부분에도 중복이 되기때문에 포괄적인 item에 호버처리한것*/
-	background-color: #2C2A29;
-	color: #669900;
-	border-radius: 6px 6px 0 0; /*위에만 깍인걸 확인수있음*/
-  }
-  header .main-menu .item .item__contents { /*메인메뉴 클릭시 호버처리*/
-	width: 100%;
-	position: fixed;
-	left: 0;
-	display: none;
-  }
-  header .main-menu .item:hover .item__contents {
-	display: block;
-  }
-  header .main-menu .item .item__contents .contents__menu {
-	background-color: #2C2A29;
-		/* height: 200px;  지워도 오토 되기때문에 글자수만큼 늘어남*/ 
-  }
-  header .main-menu .item .item__contents .contents__menu > ul {
-	padding: 20px 0;
-	display: flex;
-  }
-  header .main-menu .item .item__contents .contents__menu > ul > li {
-	width: 220px;
-  }
-  header .main-menu .item .item__contents .contents__menu > ul > li h4 {
-	padding: 3px 50px 12px 0;
-	font-size: 14px;
-	color: #fff;
-	text-align: center;
-  }
-  header .main-menu .item .item__contents .contents__menu > ul > li ul li {
-	padding: 5px 0;
-	font-size: 12px;
-	color: #999;
-	cursor: pointer;  /*커서모양*/
-  }
-  header .main-menu .item .item__contents .contents__menu > ul > li ul li:hover {
-	color: #669900;
-  }
-  
+	transition: .4s;
+}
 
-/*아이템배경*/
-.product{
+header .sub-menu .search.focused .material-icons {
+	opacity: 0;
+}
+
+header .main-menu {
+	position: absolute;
+	bottom: -20px;
+	right: 20px;
+	display: flex;
+}
+
+header .main-menu .item a {
+	text-decoration: none;
+}
+
+header .main-menu .item .item__name {
+	padding: 20px 20px 34px 20px;
+	font-family: Arial, sans-serif;
+	font-size: 18px;
+	color: #fff;
+	font-weight: 500;
+}
+
+/* Price */
+
+.main .main__box {
+	padding: 100px 0;
+	position: relative;
+}
+
+.main .main__box .container .container__menu {
+	margin-top: 70px;
+}
+.main .main__box .container .container__menu img {
+	display: block;
+	margin: 40px auto -30px;
+}
+
+.main .main__box .container .container__menu .menu {
+	font-weight: 600;
+	font-family: 'Poppins', serif;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	list-style: none;
+	display: flex;
+	justify-content: center;
+}
+
+.main .main__box .container .container__menu .menu li a {
+	font-size: 18px;
+	padding: 15px 35px 50px 10px;
+	display: block;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	border-bottom: 10px solid transparent;
+	text-decoration: none;
+	color: #000;
+	font-weight: 900;
+	margin-bottom: -30px;
+}
+
+.main .main__box .container .container__menu .menu li a:hover {
+	color: #b4975a;
+}
+
+.main .main__box .container .container__menu .menu li.active {
+	color: #b4975a;
+	border-bottom: 2px solid #b4975a;
+}
+
+.main .main__box .container .text {
+	max-width: 800px;
+	margin: 0 auto;
+	margin-top: 40px;
+	border: 6px double #eaeaea;
+	padding: 0 40px;
+	background-color: #fff;
+	/*투명도 주기-------------------------------*/
+}
+
+.main .main__box .container .text>div {
+	display: none;
+	transition: all 0.7s ease;
+}
+
+.main .main__box .container .text .active {
+	display: block;
+}
+
+.main .main__box .container .text .item {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	align-items: center;
+	padding: 2.25rem 0;
+	border-bottom: 1px solid #eaeaea;
+}
+
+.main .main__box .container .text .item .title.sub {
+	width: 70%;
+}
+
+.main .main__box .container .text .item .title.sub h3 {
+	font-size: 1.5rem;
+	font-weight: 400;
+	margin-bottom: 0.625rem;
+}
+
+.main .main__box .container .text .item .title.sub p {
+	font-size: 1rem;
+	color: #777;
+}
+
+.main .main__box .container .text .item .price {
+	width: 30%;
+	text-align: center;
+	font-size: 2.1rem;
+}
+
+
+/*Items-Background*/
+.product {
 	width: 90%;
 	box-shadow: 2px 2px 30px rgba(167, 158, 245, 0.2);
-	margin:30px auto;
-	padding:40px 20px;
+	margin: 30px auto;
+	padding: 40px 20px;
 	margin-top: 50px;
 	position: relative;
 	background-image: url("../images/productbg.png");
-	background-size:1000px;
+	background-size: 1000px;
 	background-position: center;
 	border-radius: 20px;
 }
 
-/* 아이템 */
-.items__list h2{
+/* items */
+.items__list h2 {
 	margin-bottom: 7rem;
-  margin-top: 2rem;
+	margin-top: 2rem;
 	text-align: center;
 }
 
-.items__list .items  {
+.items__list .items {
 	display: grid;
 	max-width: 1100px;
 	margin: auto;
@@ -234,155 +311,87 @@ a {
 	grid-gap: 40px;
 }
 
-.items__list .items .item{
-	box-shadow: 
-		0 5px 10px 0px rgba(0,0,0,.1),
-		0 2px 5px 0 rgba(0,0,0,.2);
+.items__list .items .item {
+	box-shadow:
+		0 5px 10px 0px rgba(0, 0, 0, .1),
+		0 2px 5px 0 rgba(0, 0, 0, .2);
 }
 
-.items__list .items .item .item-img{
+.items__list .items .item .item-img {
 	width: 100%;
 }
 
-.items__list .items .item .item-img img{
+.items__list .items .item .item-img img {
 	width: 100%;
 }
 
-.items__list .items .item .item-text{
+.items__list .items .item .item-text {
 	padding: 1rem;
 }
 
-.items__list .items .item .item-text h3{
+.items__list .items .item .item-text h3 {
 	margin-bottom: 15px;
 }
 
-.items__list .items .item-text p{
+.items__list .items .item-text p {
 	line-height: 25px;
 	color: var(--grey-text);
 }
 
-/* price */
 
-.main .main__box {
-	padding: 5.625rem 0;
-  }
-  .main .main__box .container .container__menu {
-	margin-top: 2.5rem;
-  }
-  .main .main__box .container .container__menu .menu {
-	font-weight: 600;
-	font-family: 'Poppins', serif;
-	letter-spacing: 0.1em;
-	text-transform: uppercase;
-	list-style: none;
-	display: flex;
-	justify-content: center;
-  }
-  .main .main__box .container .container__menu .menu li a {
-	font-size: 0.75rem;
-	padding: 0 1.4375rem 1.125rem 1.435rem;
-	display: block;
-	cursor: pointer;
-	transition: all 0.3s ease;
-	border-bottom: 10px solid transparent;
-  }
-  .main .main__box .container .container__menu .menu li a:hover {
-	color: #b4975a;
-  }
-  .main .main__box .container .container__menu .menu li.active {
-	color: #b4975a;
-	border-bottom: 2px solid #b4975a;
-  }
-  
-  .main .main__box .container .text {
-	max-width: 50rem;
-	margin: 0 auto;
-	margin-top: 2.5rem;
-	border: 6px double #eaeaea;
-	padding: 0 2.25rem; 
-	background-color: #fff; /*투명도 주기-------------------------------*/
-  }
-  
-  .main .main__box .container .text > div {
-	display: none;
-	transition: all 0.7s ease;
-  }
-  .main .main__box .container .text .active {
-	display: block;
-  }
-  .main .main__box .container .text .item {
-	display: flex;
-	justify-content: space-between;
-	flex-wrap: wrap;
-	align-items: center;
-	padding: 2.25rem 0;
-	border-bottom: 1px solid #eaeaea;
-  }
-  .main .main__box .container .text .item .title.sub {
-	width: 70%;
-  }
-  .main .main__box .container .text .item .title.sub h3 {
-	font-size: 1.5rem;
-	font-weight: 400;
-	margin-bottom: 0.625rem;
-  }
-  .main .main__box .container .text .item .title.sub p {
-	font-size: 1rem;
-	color: #777;
-  }
-  .main .main__box .container .text .item .price {
-	width: 30%;
-	text-align: center;
-	font-size: 2.1rem;
-  }
-  
-  
 /*Footer*/
-footer{
-	background-color: #2e2e2e;
-	border-top: 50px solid #2e2e2e;
-  }
-  footer .inner{
+footer {
+	background-color: rgba(3, 8, 20, 0.973);
+	padding: 80px 0;
+}
+
+footer .inner {
 	padding: 40px 0 60px 0;
-  }
-  footer .menu{
+}
+
+footer .menu {
 	display: flex;
 	justify-content: center;
-  }
-  footer .menu li{
+}
+
+footer .menu li {
 	position: relative;
-  }
-  footer .menu li::before{
+}
+
+footer .menu li::before {
 	content: "";
 	width: 3px;
 	height: 3px;
 	background-color: #555;
-	position: absolute; /*앱솔루트나 픽스드는 a가 인라인요소라 블럭요소로 바꿔야 하지만 저 두가지는 알아서 바뀜*/
+	position: absolute;
 	top: 0;
 	bottom: 0;
 	margin: auto;
-  }
-  footer .menu li a{
+}
+
+footer .menu li a {
 	color: #ccc;
 	font-size: 12px;
 	font-weight: 700;
 	padding: 15px;
 	display: block;
-  }
-  footer .menu li a.green{
+}
+
+footer .menu li a.green {
 	color: #669900;
-  }
-  
-  footer .info{
+}
+
+footer .info {
 	margin-top: 30px;
 	text-align: center;
-  }
-  footer .info span{
+}
+
+footer .info span {
 	margin-right: 20px;
 	color: #999;
 	font-size: 12px;
-  }
-  footer .info span:last-child{
+}
+
+footer .info span:last-child {
 	margin-right: 0;
-  }
-  
+}
