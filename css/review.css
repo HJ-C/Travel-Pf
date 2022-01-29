@@ -1,0 +1,201 @@
+
+/* Start Global Rules */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+h1{
+        font-size: 50px;
+
+}
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Oswald', 'Roboto', sans-serif;
+    counter-reset: my-sec-counter;
+}
+img {
+    max-width: 100%;
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+/* Small */
+@media(min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+/* Medium */
+@media(min-width:992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+/* Large */
+@media(min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+/* End Global Rules */
+
+/* Start Blog */
+.blog {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    background-image:url("../images/bg-blog-image.jpg") ;
+}
+
+.blog .container .title{
+    text-align: center;
+}
+.blog .container h1{
+    text-align: center;
+        font-size: 50px;
+
+}
+.blog .container .boxs {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap:25px;
+}
+
+.blog .container .boxs .box {
+    background: #FFF;
+    border-radius: 5px;
+    border-radius: 5px;
+    padding:20px;
+    position: relative;
+}
+
+.blog .container .boxs .box .image {
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+}
+.blog .container .boxs .box .image::before {
+    content: "";
+    position: absolute;
+    width:100%;
+    height:100%;
+    background-color: rgba(255, 255, 255, 0.178);
+    opacity: 0;
+    transition:.3s;
+    transition:.3s;
+    z-index: 2;
+}
+.blog .container .boxs .box:hover .image::before{
+    opacity:1;
+}
+.blog .container .boxs .box .image::after{
+    content: "New";
+    position: absolute;
+    padding:10px 20px;
+    background: #000;
+    bottom:10px;
+    left: -100px;
+    color:#FFF;
+    border-radius: 5px;
+    border-radius: 5px;
+    font-size: 14px;
+    z-index: 4;
+    transition: .3s;
+    transition: .3s;
+}
+.blog .container .boxs .box:hover .image::after{
+    left: 20px;
+}
+.blog .container .boxs .box .image img {
+    transition: .3s;
+    transition: .3s;
+}
+.blog .container .boxs .box:hover img {
+    transform: scale(1.1);
+    transform: scale(1.1);
+}
+.blog .container .boxs .box h3 {
+    margin: 20px 0;
+    font-size: 26px;
+    font-weight: 500;
+    transition: .3s;
+    transition: .3s;
+    cursor: pointer;
+}
+.blog .container .boxs .box:hover h3{
+    color: #C7A17A;
+}
+.blog .container .boxs .box p:last-of-type {
+    color:#C7A17A;
+    margin:20px 0;
+    position: relative;
+    padding-bottom: 20px;
+    cursor: pointer;
+}
+.blog .container .boxs .box p:last-of-type::after{
+    content: "";
+    position: absolute;
+    width:100%;
+    left:0;
+    bottom: 0;
+    height: 1px;
+    background: rgb(243, 242, 242);
+}
+
+
+.blog .container .boxs .box .comment span {
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 12px;
+    color: rgb(139, 138, 138);
+    cursor: pointer;
+    
+}
+
+.blog .container .boxs .box .comment span i{
+    color:#C7A17A;
+}
+.blog .container a{
+    display: block;
+    width:fit-content;
+    border:2px solid #ccc;
+    margin:auto;
+    margin-top:40px;
+    padding:20px 30px;
+    color: #000;
+    font-weight: bold;
+    padding: 17px 29px;
+    transition: 3s;
+    transition: 3s;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.blog .container a:hover {
+    color: #FFF;
+    background: #C7A17A;
+    border-color:#C7A17A;
+}
+
+
+/* 제목 이미지 */
+.s-img {
+    margin: -35px auto;
+    top: 46px;
+    left: 455px;
+    position: absolute;
+}
