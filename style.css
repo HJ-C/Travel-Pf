@@ -256,18 +256,20 @@ header .main-menu .item .item__name {
   background-color: rgba(3, 8, 20, 0.973);
   position: relative;
 }
-.gallery .wrapper .title-img{
-  position: absolute;
-  top: 24vh;
-  left: 77vh;
+.gallery .text{
+  width: 20%;
 }
-.gallery .wrapper h2{
-	margin-bottom: 7rem;
-	text-align: center;
+.gallery .text h2 {
+  font-size: 36px;
+  font-weight: 900;
+  text-transform: uppercase;
+  border-bottom: solid 3px #fff;
   color: #fff;
-  padding-top: 200px;
-  font-size: 40px;
+padding: 100px 10px 10px 161px;
+  margin-bottom: 80px;
 }
+
+
 
 .gallery .photo-grid{
 	display: grid;

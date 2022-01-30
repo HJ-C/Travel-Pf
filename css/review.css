@@ -199,3 +199,19 @@ img {
     left: 455px;
     position: absolute;
 }
+
+.sub-title .text{
+    width: 50%;
+  }
+.sub-title .text h2 {
+    font-size: 36px;
+    font-weight: 800;
+    text-transform: uppercase;
+    border-bottom: solid 2px #000;
+    border-width: 30%;
+    width: 60%;
+    color: #fff;
+    padding: 100px 50px 10px 200px;
+    margin-bottom: 80px;
+}
+  
