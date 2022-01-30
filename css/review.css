@@ -4,13 +4,12 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    list-style: none;
 }
+
 h1{
         font-size: 50px;
 
-}
-html {
-    scroll-behavior: smooth;
 }
 
 body {
@@ -27,6 +26,12 @@ img {
     margin-left: auto;
     margin-right: auto;
     position: relative;
+}
+
+a {
+	text-decoration: none;
+	color: #303133;
+	transition: all 0.3s ease;
 }
 
 /* Small */
@@ -50,12 +55,147 @@ img {
     }
 }
 
-/* End Global Rules */
+
+/*INNER*/
+.inner {
+	width: 1100px;
+	margin: 0 auto;
+	position: relative;
+}
+
+/*Logo & Menu*/
+header {
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.164);
+	position: fixed;
+	top: 0;
+	z-index: 9;
+}
+
+header>.inner {
+	height: 120px;
+}
+
+header .logo {
+	height: 100px;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 50px;
+	margin: auto;
+	text-decoration-line: none;
+}
+
+header .logo img {
+	height: 110px;
+}
+
+header .sub-menu {
+	position: absolute;
+	top: 0px;
+	right: 0;
+	display: flex;
+}
+
+header .sub-menu ul.menu {
+	display: flex;
+}
+
+header .sub-menu ul.menu li {
+	position: relative;
+}
+
+header .sub-menu ul.menu li::before {
+	content: "";
+	width: 1px;
+	height: 12px;
+	background-color: #000;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+}
+
+header .sub-menu ul.menu li:first-child::before {
+	display: none;
+}
+
+header .sub-menu ul.menu li a {
+	padding: 11px 16px;
+	display: block;
+	font-size: 13px;
+	color: #000;
+}
+
+header .sub-menu ul.menu li a:hover {
+	color: #fff;
+}
+
+/* Search-icon*/
+header .sub-menu .search {
+	position: relative;
+	height: 42px;
+	padding-top: 5px;
+}
+
+header .sub-menu .search input {
+	width: 36px;
+	height: 34px;
+	padding: 4px 10px;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+	border-radius: 5px;
+	outline: none;
+	background-color: #fff;
+	color: #777;
+	font-size: 12px;
+	transition: width .6s;
+}
+
+header .sub-menu .search input:focus {
+	width: 190px;
+	border-color: #669900;
+}
+
+header .sub-menu .search .material-icons {
+	height: 24px;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 5px;
+	margin: auto;
+	transition: .4s;
+}
+
+header .sub-menu .search.focused .material-icons {
+	opacity: 0;
+}
+
+header .main-menu {
+	position: absolute;
+	bottom: -20px;
+	right: 20px;
+	display: flex;
+}
+
+header .main-menu .item a {
+	text-decoration: none;
+}
+
+header .main-menu .item .item__name {
+	padding: 20px 20px 34px 20px;
+	font-family: Arial, sans-serif;
+	font-size: 18px;
+	color: #fff;
+	font-weight: 500;
+}
+
+
 
 /* Start Blog */
 .blog {
-    padding-top: 80px;
-    padding-bottom: 80px;
+    padding-top: 180px;
+    padding-bottom: 100px;
     background-image:url("../images/bg-blog-image.jpg") ;
 }
 
@@ -64,7 +204,8 @@ img {
 }
 .blog .container h1{
     text-align: center;
-        font-size: 50px;
+    font-size: 50px;
+    padding-bottom: 40px;
 
 }
 .blog .container .boxs {
@@ -215,3 +356,61 @@ img {
     margin-bottom: 80px;
 }
   
+/*Footer*/
+footer {
+	background-color: rgba(255, 255, 255, 0);
+    padding-top: 40px;
+}
+
+footer .inner {
+	padding: 40px 0 60px 0;
+}
+
+footer .menu {
+	display: flex;
+	justify-content: center;
+}
+
+footer .menu li {
+	position: relative;
+}
+
+footer .menu li::before {
+	content: "";
+	width: 3px;
+	height: 3px;
+	background-color: #555;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+}
+
+footer .menu li a {
+	color: #000;
+	font-size: 12px;
+	font-weight: 700;
+	padding: 15px;
+	display: block;
+	text-decoration: none;
+}
+
+footer .menu li a.green {
+	color: #669900;
+}
+
+footer .info {
+	margin-top: 30px;
+	text-align: center;
+}
+
+footer .info span {
+	margin-right: 20px;
+	color: #999;
+	font-size: 12px;
+}
+
+footer .info span:last-child {
+	margin-right: 0;
+}
+

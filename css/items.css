@@ -343,6 +343,7 @@ header .main-menu .item .item__name {
 
 .items__list .items .item .item-img img {
 	width: 100%;
+	height: 250px;
 }
 
 .items__list .items .item .item-text {
@@ -351,6 +352,7 @@ header .main-menu .item .item__name {
 
 .items__list .items .item .item-text h3 {
 	margin-bottom: 15px;
+	font-weight: 700;
 }
 
 .items__list .items .item-text p {
@@ -361,7 +363,7 @@ header .main-menu .item .item__name {
 
 /*Footer*/
 footer {
-	background-color: rgba(3, 8, 20, 0.973);
+	background-color: rgba(0, 0, 0, 0);
 	padding: 80px 0;
 }
 
@@ -390,11 +392,12 @@ footer .menu li::before {
 }
 
 footer .menu li a {
-	color: #ccc;
+	color: #000;
 	font-size: 12px;
 	font-weight: 700;
 	padding: 15px;
 	display: block;
+	text-decoration: none;
 }
 
 footer .menu li a.green {
