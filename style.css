@@ -14,7 +14,7 @@
 /* Background */
 
 .bg-img1{
-  background-image: url("../images/bg1.jpg");
+  background-image: url("../images/index/bg1.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed; 
@@ -23,7 +23,7 @@
 }
 
 .bg-img2{
-  background-image: url("../images/bg2.jpg");
+  background-image: url("../images/index/bg2.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
@@ -158,7 +158,7 @@ header .main-menu .item .item__name {
 /* Card */
 .home
 {
-    background-image: url(../images/bg0.jpg);
+    background-image: url(../images/index/bg0.jpg);
     background-size: 100% 100%;
     height: 100vh;
     color: #fff;
@@ -241,13 +241,13 @@ header .main-menu .item .item__name {
   background-position: center;
 }
 .slide .slide__list .slide__container .col .slider .slide.foto1 {
-  background-image: url(../images/bg3.jpg);
+  background-image: url(../images/index/bg3.jpg);
 }
 .slide .slide__list .slide__container .col .slider .slide.foto2 {
-  background-image: url(../images/bg4.jpg);
+  background-image: url(../images/index/bg4.jpg);
 }
 .slide .slide__list .slide__container .col .slider .slide.foto3 {
-  background-image: url(../images/bg5.jpg);
+  background-image: url(../images/index/bg5.jpg);
 }
 
 

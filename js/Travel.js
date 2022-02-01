@@ -1,7 +1,7 @@
 window.onload = function () {
     const data = {
       img: [
-        {a: '../images/l-img.jpg', s: '../images/s-img.jpg'},
+        {a: '../images/travel/l-img.jpg', s: '../images/travel/s-img.jpg'},
       ]
     };
     const magnifyId = 0
