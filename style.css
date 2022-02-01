@@ -4,8 +4,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* transition: all .4s; */
+    transition: all .4s;
     list-style: none;
+    font-family: Arial, sans-serif;
 }
 .menu a{
   text-decoration: none;
@@ -265,7 +266,7 @@ header .main-menu .item .item__name {
   text-transform: uppercase;
   border-bottom: solid 3px #fff;
   color: #fff;
-padding: 100px 10px 10px 161px;
+  padding: 100px 10px 10px 125px;
   margin-bottom: 80px;
 }
 

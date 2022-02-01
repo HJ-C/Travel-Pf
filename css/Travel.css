@@ -4,6 +4,7 @@
 	padding: 0;
 	box-sizing: border-box;
 	list-style: none;
+	transition: all .4s;
 }
 .bg {
   background-image: url(../images/bg-blog-image.jpg);
@@ -43,6 +44,7 @@ header .logo {
 	text-decoration-line: none;
 }
 
+
 header .logo img {
 	height: 110px;
 }
@@ -52,6 +54,11 @@ header .sub-menu {
 	top: 0px;
 	right: 0;
 	display: flex;
+}
+header .sub-menu a {
+	text-decoration: none;
+	color: #303133;
+	transition: all 0.3s ease;
 }
 
 header .sub-menu ul.menu {
